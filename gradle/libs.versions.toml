@@ -7,8 +7,17 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
-activity = "1.8.0"
+activity = "1.9.2"
 constraintlayout = "2.1.4"
+extensions = "2.2.0"
+runtimektx = "2.8.6"
+viewmodelktx = "2.8.6"
+livedataktx = "2.8.6"
+activityktx = "1.9.2"
+glide = "4.16.0"
+gson = "2.11.0"
+androidmail = "1.6.6"
+androidactivation = "1.6.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -19,8 +28,36 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-lifecycle-extensions = { group = "androidx.lifecycle", name = "lifecycle-extensions", version.ref = "extensions" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "runtimektx" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "viewmodelktx" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "livedataktx" }
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityktx" }
+com-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+com-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+com-android-mail = { group = "com.sun.mail", name = "android-mail", version.ref = "androidmail" }
+com-android-activation = { group = "com.sun.mail", name = "android-activation", version.ref = "androidactivation" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
+[bundles]
+lifecycleLibs = [
+    "androidx-lifecycle-extensions",
+    "androidx-lifecycle-runtime-ktx",
+    "androidx-lifecycle-viewmodel-ktx",
+    "androidx-lifecycle-livedata-ktx"
+]
+activityLibs = [
+    "androidx-activity",
+    "androidx-activity-ktx"
+]
+comLibs = [
+    "com-glide",
+    "com-gson"
+]
+emailLibs = [
+    "com-android-mail",
+    "com-android-activation"
+]

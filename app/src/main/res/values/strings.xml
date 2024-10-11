@@ -9,4 +9,14 @@
     <string name="play_or_pause">Play or Pause</string>
     <string name="favourite">Favourite</string>
     <string name="follow">Follow</string>
+    <string name="notification">Notification</string>
+    <string name="mail">Mail</string>
+    <string name="upload">Upload</string>
+    <string name="cast">Cast</string>
+    <string name="listen_again">Listen again</string>
+    <string name="quick_picks">Quick picks</string>
+    <string name="from_your_library">From your library</string>
+    <string name="trending_songs_for_you">Trending songs for you</string>
+    <string name="artists_you_should_follow">Artists you should follow</string>
+    <string name="music_genre">Music genre</string>
 </resources>

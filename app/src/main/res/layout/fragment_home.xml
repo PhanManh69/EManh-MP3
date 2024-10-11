@@ -1,10 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.home.HomeFragment">
 
+    <LinearLayout
+        android:id="@+id/layoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/txtHome"
+            style="@style/txt18BlackBold"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/home" />
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/imgButtonCast"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="24dp"
+            android:contentDescription="@string/cast"
+            android:src="@mipmap/ic_cast" />
+
+        <ImageView
+            android:id="@+id/imgButtonUpload"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="24dp"
+            android:contentDescription="@string/upload"
+            android:src="@mipmap/ic_upload" />
+
+        <ImageView
+            android:id="@+id/imgButtonMail"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="24dp"
+            android:contentDescription="@string/mail"
+            android:src="@mipmap/ic_mail" />
+
+        <ImageView
+            android:id="@+id/imgButtonNotification"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="24dp"
+            android:contentDescription="@string/notification"
+            android:src="@mipmap/ic_notification" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/layoutScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/layoutButton"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/txt16BlackBold"
+                android:text="@string/listen_again"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listListenAgain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                style="@style/txt16BlackBold"
+                android:layout_marginTop="36dp"
+                android:text="@string/quick_picks"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listQuickPicks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                style="@style/txt16BlackBold"
+                android:layout_marginTop="36dp"
+                android:text="@string/from_your_library"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listLibrary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                style="@style/txt16BlackBold"
+                android:layout_marginTop="36dp"
+                android:text="@string/trending_songs_for_you"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listTrending"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                style="@style/txt16BlackBold"
+                android:layout_marginTop="36dp"
+                android:text="@string/artists_you_should_follow"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listFollow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                style="@style/txt16BlackBold"
+                android:layout_marginTop="36dp"
+                android:text="@string/music_genre"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listMusicGenre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

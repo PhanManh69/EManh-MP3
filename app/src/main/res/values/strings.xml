@@ -6,4 +6,7 @@
     <string name="search">Search</string>
     <string name="library">Library</string>
     <string name="setting">Setting</string>
+    <string name="play_or_pause">Play or Pause</string>
+    <string name="favourite">Favourite</string>
+    <string name="follow">Follow</string>
 </resources>

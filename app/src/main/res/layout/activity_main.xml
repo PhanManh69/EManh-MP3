@@ -12,8 +12,84 @@
         android:id="@+id/layoutMain"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/layoutBar"
+        app:layout_constraintBottom_toTopOf="@+id/layoutPlayMusic"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutPlayMusic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/skyBlue"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/layoutBar">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgLogoSong"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/navy"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Corner4dp" />
+
+        <TextView
+            android:id="@+id/txtTitleSong"
+            style="@style/txt14BlackBold"
+            android:layout_width="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:text="Đáp Án Cuối Cùng"
+            app:layout_constraintEnd_toStartOf="@+id/imgFollow"
+            app:layout_constraintStart_toEndOf="@+id/imgLogoSong"
+            app:layout_constraintTop_toTopOf="@+id/imgLogoSong" />
+
+        <TextView
+            android:id="@+id/txtSingerSong"
+            style="@style/txt14Black"
+            android:layout_width="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:text="Quân A.P"
+            app:layout_constraintBottom_toBottomOf="@+id/imgLogoSong"
+            app:layout_constraintEnd_toStartOf="@+id/imgFollow"
+            app:layout_constraintStart_toEndOf="@+id/imgLogoSong" />
+
+        <ImageView
+            android:id="@+id/imgFollow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/follow"
+            android:src="@mipmap/ic_following"
+            app:layout_constraintEnd_toStartOf="@+id/imgFavourite"
+            app:layout_constraintTop_toTopOf="@+id/imgFavourite" />
+
+        <ImageView
+            android:id="@+id/imgFavourite"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/favourite"
+            android:src="@mipmap/ic_favorite"
+            app:layout_constraintEnd_toStartOf="@+id/imgPlayPause"
+            app:layout_constraintTop_toTopOf="@+id/imgPlayPause" />
+
+        <ImageView
+            android:id="@+id/imgPlayPause"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/play_or_pause"
+            android:src="@mipmap/ic_pause"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
         android:layout_width="match_parent"

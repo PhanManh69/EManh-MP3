@@ -8,12 +8,10 @@ espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.2"
+fragment = "1.8.4"
 constraintlayout = "2.1.4"
 extensions = "2.2.0"
-runtimektx = "2.8.6"
-viewmodelktx = "2.8.6"
-livedataktx = "2.8.6"
-activityktx = "1.9.2"
+lifecycle = "2.8.6"
 glide = "4.16.0"
 gson = "2.11.0"
 androidmail = "1.6.6"
@@ -29,10 +27,11 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 androidx-lifecycle-extensions = { group = "androidx.lifecycle", name = "lifecycle-extensions", version.ref = "extensions" }
-androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "runtimektx" }
-androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "viewmodelktx" }
-androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "livedataktx" }
-androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityktx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment" }
 com-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 com-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 com-android-mail = { group = "com.sun.mail", name = "android-mail", version.ref = "androidmail" }
@@ -50,8 +49,8 @@ lifecycleLibs = [
     "androidx-lifecycle-livedata-ktx"
 ]
 activityLibs = [
-    "androidx-activity",
-    "androidx-activity-ktx"
+    "androidx-activity-ktx",
+    "androidx-fragment-ktx"
 ]
 comLibs = [
     "com-glide",

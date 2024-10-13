@@ -76,7 +76,7 @@
                 <TextView
                     android:id="@+id/txtButtonAllListen"
                     style="@style/txt16BlackBold"
-                    android:background="@drawable/bg_white_bd_grey_1"
+                    android:background="@drawable/bg_white_bd_grey_50"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"
                     android:text="@string/view_all" />

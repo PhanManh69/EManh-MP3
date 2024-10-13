@@ -1,40 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
-    android:layout_marginEnd="8dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_marginEnd="8dp">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imgLogoSong"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@color/navy"
-        android:scaleType="centerCrop"
-        app:layout_constraintTop_toTopOf="parent"
+    <FrameLayout
+        android:id="@+id/layoutLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_bd_black_8"
+        android:padding="1dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Corner8dp"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgLogoSong"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Corner8dp" />
+
+        <ProgressBar
+            android:id="@+id/progressLogo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/blue"
+            android:padding="46dp"
+            android:visibility="visible" />
+
+    </FrameLayout>
 
     <TextView
-        style="@style/txt14BlackBold"
         android:id="@+id/txtNameSong"
+        style="@style/txt14BlackBold"
         android:layout_width="0dp"
-        android:maxLines="2"
         android:layout_marginTop="8dp"
-        android:text="Có một chuyện tình (Theme Song From 'Ngày xưa có một chuyện tình')"
-        app:layout_constraintTop_toBottomOf="@+id/imgLogoSong"
-        app:layout_constraintStart_toStartOf="@+id/imgLogoSong"
-        app:layout_constraintEnd_toEndOf="@+id/imgLogoSong"/>
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="@+id/layoutLogo"
+        app:layout_constraintStart_toStartOf="@+id/layoutLogo"
+        app:layout_constraintTop_toBottomOf="@+id/layoutLogo" />
 
     <TextView
-        style="@style/txt14Black"
         android:id="@+id/txtSingerSong"
+        style="@style/txt14Black"
         android:layout_width="0dp"
         android:layout_marginTop="4dp"
-        android:text="Phan Mạnh Quỳnh"
-        app:layout_constraintStart_toStartOf="@+id/imgLogoSong"
-        app:layout_constraintTop_toBottomOf="@+id/txtNameSong"
-        app:layout_constraintEnd_toEndOf="@+id/imgLogoSong"/>
+        app:layout_constraintEnd_toEndOf="@+id/layoutLogo"
+        app:layout_constraintStart_toStartOf="@+id/layoutLogo"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameSong" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

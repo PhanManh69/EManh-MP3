@@ -4,10 +4,10 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class ListenAgainModel(
-    val id: Int = 0,
-    val logo: String = "",
-    val name: String = "",
-    val singer: String = ""
+    var id: Int = 0,
+    var logo: String = "",
+    var name: String = "",
+    var singer: String = ""
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),

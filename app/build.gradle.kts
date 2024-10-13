@@ -37,6 +37,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        true.also { dataBinding = it }
     }
     packagingOptions {
         exclude("META-INF/NOTICE.md")

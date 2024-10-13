@@ -36,7 +36,7 @@
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Corner4dp" />
 
         <TextView
-            android:id="@+id/txtTitleSong"
+            android:id="@+id/txtNameSong"
             style="@style/txt14BlackBold"
             android:layout_width="0dp"
             android:layout_marginStart="8dp"

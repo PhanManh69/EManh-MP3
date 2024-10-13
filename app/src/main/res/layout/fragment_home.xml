@@ -24,14 +24,6 @@
             android:text="@string/home" />
 
         <ImageView
-            android:id="@+id/imgButtonCast"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="24dp"
-            android:contentDescription="@string/cast"
-            android:src="@mipmap/ic_cast" />
-
-        <ImageView
             android:id="@+id/imgButtonUpload"
             android:layout_width="25dp"
             android:layout_height="25dp"
@@ -61,79 +53,98 @@
         android:id="@+id/layoutScroll"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/layoutButton"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutButton">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <TextView
-                style="@style/txt16BlackBold"
-                android:text="@string/listen_again"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt16BlackBold"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/listen_again" />
+
+                <TextView
+                    android:id="@+id/txtButtonAllListen"
+                    style="@style/txt16BlackBold"
+                    android:background="@drawable/bg_white_bd_grey_1"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:text="@string/view_all" />
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listListenAgain"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginStart="-8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="-8dp" />
 
             <TextView
                 style="@style/txt16BlackBold"
                 android:layout_marginTop="36dp"
-                android:text="@string/quick_picks"/>
+                android:text="@string/quick_picks" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listQuickPicks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="16dp" />
 
             <TextView
                 style="@style/txt16BlackBold"
                 android:layout_marginTop="36dp"
-                android:text="@string/from_your_library"/>
+                android:text="@string/from_your_library" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listLibrary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="16dp" />
 
             <TextView
                 style="@style/txt16BlackBold"
                 android:layout_marginTop="36dp"
-                android:text="@string/trending_songs_for_you"/>
+                android:text="@string/trending_songs_for_you" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listTrending"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="16dp" />
 
             <TextView
                 style="@style/txt16BlackBold"
                 android:layout_marginTop="36dp"
-                android:text="@string/artists_you_should_follow"/>
+                android:text="@string/artists_you_should_follow" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listFollow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="16dp" />
 
             <TextView
                 style="@style/txt16BlackBold"
                 android:layout_marginTop="36dp"
-                android:text="@string/music_genre"/>
+                android:text="@string/music_genre" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listMusicGenre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="16dp" />
 
         </LinearLayout>
     </ScrollView>

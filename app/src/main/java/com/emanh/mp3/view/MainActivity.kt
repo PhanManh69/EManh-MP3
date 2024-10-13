@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.emanh.mp3.R
 import com.emanh.mp3.databinding.ActivityMainBinding
+import com.emanh.mp3.helper.BaseActivity
 import com.emanh.mp3.view.home.HomeFragment
 import com.emanh.mp3.view.library.LibraryFragment
 import com.emanh.mp3.view.search.SearchFragment

@@ -19,4 +19,5 @@
     <string name="trending_songs_for_you">Trending songs for you</string>
     <string name="artists_you_should_follow">Artists you should follow</string>
     <string name="music_genre">Music genre</string>
+    <string name="view_all">View all</string>
 </resources>

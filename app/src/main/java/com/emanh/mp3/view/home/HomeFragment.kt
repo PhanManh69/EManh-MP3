@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import com.emanh.mp3.databinding.FragmentHomeBinding
 import com.emanh.mp3.helper.BaseFragment
 import com.emanh.mp3.view.MainActivity
+import com.emanh.mp3.viewModel.ChannelViewModel
 import com.emanh.mp3.viewModel.LibraryViewModel
 import com.emanh.mp3.viewModel.SongViewModel
 
@@ -21,6 +22,7 @@ class HomeFragment : BaseFragment() {
     private val binding get() = _binding!!
     private val songViewModel: SongViewModel by viewModels()
     private val libraryViewModel: LibraryViewModel by viewModels()
+    private val channelViewModel: ChannelViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +34,8 @@ class HomeFragment : BaseFragment() {
         initListenAgain()
         initQuickPicks()
         initLibrary()
+        initTrending()
+        initFollow()
 
         return binding.root
     }
@@ -93,6 +97,39 @@ class HomeFragment : BaseFragment() {
 
             binding.listLibrary.visibility = View.VISIBLE
             binding.progressLibrary.visibility = View.GONE
+        })
+    }
+
+    private fun initTrending() {
+        val trendingAdapter = TrendingHomeAdapter(mutableListOf())
+        val layoutManager = GridLayoutManager(context, 4, GridLayoutManager.HORIZONTAL, false)
+        binding.listTrending.layoutManager = layoutManager
+        binding.listTrending.adapter = trendingAdapter
+        binding.progressTrending.visibility = View.VISIBLE
+
+        val pagerSnapHelper = PagerSnapHelper()
+        pagerSnapHelper.attachToRecyclerView(binding.listTrending)
+
+        songViewModel.trendingList.observe(viewLifecycleOwner, Observer {
+            trendingAdapter.updateList(it)
+
+            binding.listTrending.visibility = View.VISIBLE
+            binding.progressTrending.visibility = View.GONE
+        })
+    }
+
+    private fun initFollow() {
+        val channelAdapter = FollowSuggestAdapter(mutableListOf())
+        binding.listFollow.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.listFollow.adapter = channelAdapter
+        binding.progressFollow.visibility = View.VISIBLE
+
+        channelViewModel.channelList.observe(viewLifecycleOwner, Observer {
+            channelAdapter.updateList(it)
+
+            binding.listFollow.visibility = View.VISIBLE
+            binding.progressFollow.visibility = View.GONE
         })
     }
 }

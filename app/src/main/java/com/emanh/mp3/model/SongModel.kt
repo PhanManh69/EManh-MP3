@@ -8,14 +8,16 @@ data class SongModel(
     var logo: String = "",
     var name: String = "",
     var singer: String = "",
-    var time: String = ""
+    var time: String = "",
+    var view: Long = 0
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
-        parcel.readString().toString()
+        parcel.readString().toString(),
+        parcel.readLong()
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -24,6 +26,7 @@ data class SongModel(
         parcel.writeString(name)
         parcel.writeString(singer)
         parcel.writeString(time)
+        parcel.writeLong(view)
     }
 
     override fun describeContents(): Int {

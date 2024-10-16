@@ -86,8 +86,8 @@
                     style="@style/txt16BlackBold"
                     android:background="@drawable/bg_white_bd_grey_50"
                     android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
                     android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
                     android:paddingBottom="4dp"
                     android:text="@string/view_all" />
 
@@ -133,8 +133,8 @@
                     style="@style/txt16BlackBold"
                     android:background="@drawable/bg_white_bd_grey_50"
                     android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
                     android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
                     android:paddingBottom="4dp"
                     android:text="@string/play_all" />
 
@@ -199,13 +199,15 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp">
+                android:layout_marginTop="8dp">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/listTrending"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:overScrollMode="never"/>
+                    android:layout_marginStart="-8dp"
+                    android:layout_marginEnd="-8dp"
+                    android:overScrollMode="never" />
 
                 <ProgressBar
                     android:id="@+id/progressTrending"
@@ -218,7 +220,7 @@
 
             <TextView
                 style="@style/txt16BlackBold"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="28dp"
                 android:text="@string/artists_you_should_follow" />
 
             <FrameLayout
@@ -230,6 +232,8 @@
                     android:id="@+id/listFollow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="-8dp"
+                    android:layout_marginEnd="-8dp"
                     android:overScrollMode="never" />
 
                 <ProgressBar
@@ -243,7 +247,7 @@
 
             <TextView
                 style="@style/txt16BlackBold"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/music_genre" />
 
             <FrameLayout

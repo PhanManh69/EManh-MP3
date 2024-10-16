@@ -20,4 +20,7 @@
     <string name="artists_you_should_follow">Artists you should follow</string>
     <string name="music_genre">Music genre</string>
     <string name="view_all">View all</string>
+    <string name="logo_song">Logo Song</string>
+    <string name="explore">Explore</string>
+    <string name="button_menu">Button menu</string>
 </resources>

@@ -114,8 +114,8 @@
         <TextView
             android:id="@+id/txtButtonSearch"
             style="@style/txtButtonBar"
-            android:text="@string/search"
-            app:drawableTopCompat="@mipmap/ic_search" />
+            android:text="@string/explore"
+            app:drawableTopCompat="@mipmap/ic_explore" />
 
         <TextView
             android:id="@+id/txtButtonLibrary"

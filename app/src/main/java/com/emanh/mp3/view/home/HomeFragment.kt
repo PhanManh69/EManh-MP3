@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.emanh.mp3.databinding.FragmentHomeBinding
 import com.emanh.mp3.helper.BaseFragment
+import com.emanh.mp3.view.MainActivity
 import com.emanh.mp3.viewModel.ListenAgainViewModel
 
 class HomeFragment : BaseFragment() {
@@ -36,7 +37,9 @@ class HomeFragment : BaseFragment() {
     }
 
     override fun initClick() {
-
+        binding.txtButtonAllListen.setOnClickListener {
+            (activity as? MainActivity)?.replaceFragment(ListenAgainFragment())
+        }
     }
 
     private fun initListenAgain() {
@@ -46,7 +49,8 @@ class HomeFragment : BaseFragment() {
         binding.listListenAgain.adapter = listenAgainAdapter
 
         listenAgainViewModel.listenAgainList.observe(viewLifecycleOwner, Observer {
-            listenAgainAdapter.updateList(it)
+            val limitedList = it.take(10).toMutableList()
+            listenAgainAdapter.updateList(limitedList)
         })
     }
 }

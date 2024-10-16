@@ -9,9 +9,9 @@ import androidx.fragment.app.Fragment
 import com.emanh.mp3.R
 import com.emanh.mp3.databinding.ActivityMainBinding
 import com.emanh.mp3.helper.BaseActivity
+import com.emanh.mp3.view.explore.ExploreFragment
 import com.emanh.mp3.view.home.HomeFragment
 import com.emanh.mp3.view.library.LibraryFragment
-import com.emanh.mp3.view.search.SearchFragment
 import com.emanh.mp3.view.setting.SettingFragment
 
 class MainActivity : BaseActivity() {
@@ -51,7 +51,7 @@ class MainActivity : BaseActivity() {
 
         txtButtonSearch.setOnClickListener {
             selectTab(Tab.SEARCH, tabButtons)
-            replaceFragment(SearchFragment())
+            replaceFragment(ExploreFragment())
         }
 
         txtButtonLibrary.setOnClickListener {
@@ -80,7 +80,7 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+    fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
 

@@ -25,27 +25,35 @@
 
         <ImageView
             android:id="@+id/imgButtonUpload"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_marginStart="24dp"
             android:contentDescription="@string/upload"
             android:src="@mipmap/ic_upload" />
 
         <ImageView
             android:id="@+id/imgButtonMail"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_marginStart="24dp"
             android:contentDescription="@string/mail"
             android:src="@mipmap/ic_mail" />
 
         <ImageView
             android:id="@+id/imgButtonNotification"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_marginStart="24dp"
             android:contentDescription="@string/notification"
             android:src="@mipmap/ic_notification" />
+
+        <ImageView
+            android:id="@+id/imgButtonSearch"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
+            android:contentDescription="@string/search"
+            android:src="@mipmap/ic_search" />
 
     </LinearLayout>
 

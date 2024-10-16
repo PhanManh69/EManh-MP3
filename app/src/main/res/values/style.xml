@@ -7,4 +7,20 @@
     <style name="ShapeAppearanceOverlay.App.Corner8dp" parent="">
         <item name="cornerSize">8dp</item>
     </style>
+
+    <style name="ShapeAppearanceOverlay.App.TopLeft8dp" parent="">
+        <item name="cornerSizeTopLeft">8dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.TopRight8dp" parent="">
+        <item name="cornerSizeTopRight">8dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.BottomLeft8dp" parent="">
+        <item name="cornerSizeBottomLeft">8dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.BottomRight8dp" parent="">
+        <item name="cornerSizeBottomRight">8dp</item>
+    </style>
 </resources>

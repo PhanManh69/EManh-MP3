@@ -7,10 +7,12 @@ data class ListenAgainModel(
     var id: Int = 0,
     var logo: String = "",
     var name: String = "",
-    var singer: String = ""
+    var singer: String = "",
+    var time: String = ""
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
+        parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString()
@@ -21,6 +23,7 @@ data class ListenAgainModel(
         parcel.writeString(logo)
         parcel.writeString(name)
         parcel.writeString(singer)
+        parcel.writeString(time)
     }
 
     override fun describeContents(): Int {

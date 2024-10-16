@@ -13,22 +13,22 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.emanh.mp3.R
-import com.emanh.mp3.databinding.ViewholderListenAgainBinding
+import com.emanh.mp3.databinding.ViewholderQuickPicksBinding
 import com.emanh.mp3.model.SongModel
 
-class ListenAgainAdapter(
+class QuickPicksAdapter(
     private val items: MutableList<SongModel>
-) : RecyclerView.Adapter<ListenAgainAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<QuickPicksAdapter.ViewHolder>() {
 
     private var content: Context? = null
 
-    class ViewHolder(val binding: ViewholderListenAgainBinding) :
+    class ViewHolder(val binding: ViewholderQuickPicksBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         content = parent.context
         val binding =
-            ViewholderListenAgainBinding.inflate(LayoutInflater.from(content), parent, false)
+            ViewholderQuickPicksBinding.inflate(LayoutInflater.from(content), parent, false)
 
         return ViewHolder(binding)
     }

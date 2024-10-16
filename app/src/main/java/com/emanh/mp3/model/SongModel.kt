@@ -3,7 +3,7 @@ package com.emanh.mp3.model
 import android.os.Parcel
 import android.os.Parcelable
 
-data class ListenAgainModel(
+data class SongModel(
     var id: Int = 0,
     var logo: String = "",
     var name: String = "",
@@ -30,12 +30,12 @@ data class ListenAgainModel(
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<ListenAgainModel> {
-        override fun createFromParcel(parcel: Parcel): ListenAgainModel {
-            return ListenAgainModel(parcel)
+    companion object CREATOR : Parcelable.Creator<SongModel> {
+        override fun createFromParcel(parcel: Parcel): SongModel {
+            return SongModel(parcel)
         }
 
-        override fun newArray(size: Int): Array<ListenAgainModel?> {
+        override fun newArray(size: Int): Array<SongModel?> {
             return arrayOfNulls(size)
         }
     }

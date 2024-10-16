@@ -13,14 +13,14 @@ import com.emanh.mp3.databinding.FragmentListenAgainBinding
 import com.emanh.mp3.helper.BaseFragment
 import com.emanh.mp3.view.MainActivity
 import com.emanh.mp3.view.search.SearchFragment
-import com.emanh.mp3.viewModel.ListenAgainViewModel
+import com.emanh.mp3.viewModel.SongViewModel
 import com.google.android.material.imageview.ShapeableImageView
 
 class ListenAgainFragment : BaseFragment() {
 
     private var _binding: FragmentListenAgainBinding? = null
     private val binding get() = _binding!!
-    private val listenAgainViewModel: ListenAgainViewModel by viewModels()
+    private val listenAgainViewModel: SongViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,12 +53,15 @@ class ListenAgainFragment : BaseFragment() {
 
     private fun initListenAgain() {
         val listenAgainAdapter = ListListenAdapter(mutableListOf())
-        binding.listListenAgain.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.listListenAgain.layoutManager = LinearLayoutManager(requireContext())
         binding.listListenAgain.adapter = listenAgainAdapter
+        binding.progressListenAgain.visibility = View.VISIBLE
 
         listenAgainViewModel.listenAgainList.observe(viewLifecycleOwner, Observer {
             listenAgainAdapter.updateList(it)
+
+            binding.listListenAgain.visibility = View.VISIBLE
+            binding.progressListenAgain.visibility = View.GONE
         })
     }
 

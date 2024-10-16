@@ -38,7 +38,7 @@
 
     </LinearLayout>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/layoutScroll"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -55,7 +55,7 @@
                 android:layout_width="202dp"
                 android:layout_height="202dp"
                 android:layout_gravity="center"
-                android:background="@drawable/bg_white_bd_black_8"
+                android:background="@drawable/bg_white_bd_grey_8"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -110,7 +110,7 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/listen_again" />
 
-            <androidx.core.widget.NestedScrollView
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp">
@@ -120,9 +120,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-8dp"
-                    android:layout_marginBottom="-8dp" />
+                    android:layout_marginBottom="-8dp"
+                    android:overScrollMode="never"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            </androidx.core.widget.NestedScrollView>
+                <ProgressBar
+                    android:id="@+id/progressListenAgain"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:indeterminateTint="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

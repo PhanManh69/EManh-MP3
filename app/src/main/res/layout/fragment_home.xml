@@ -87,73 +87,182 @@
                     android:background="@drawable/bg_white_bd_grey_50"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
                     android:text="@string/view_all" />
 
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listListenAgain"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="-8dp" />
+                android:layout_marginTop="16dp">
 
-            <TextView
-                style="@style/txt16BlackBold"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listListenAgain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-8dp"
+                    android:layout_marginEnd="-8dp"
+                    android:overScrollMode="never" />
+
+                <ProgressBar
+                    android:id="@+id/progressListenAgain"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/blue" />
+
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
-                android:text="@string/quick_picks" />
+                android:orientation="horizontal">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listQuickPicks"
+                <TextView
+                    style="@style/txt16BlackBold"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/quick_picks" />
+
+                <TextView
+                    android:id="@+id/txtButtonAllQuickPicks"
+                    style="@style/txt16BlackBold"
+                    android:background="@drawable/bg_white_bd_grey_50"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/play_all" />
+
+            </LinearLayout>
+
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="16dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listQuickPicks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-8dp"
+                    android:layout_marginTop="-8dp"
+                    android:layout_marginEnd="-8dp"
+                    android:layout_marginBottom="-8dp"
+                    android:overScrollMode="never" />
+
+                <ProgressBar
+                    android:id="@+id/progressQuickPicks"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/blue" />
+
+            </FrameLayout>
 
             <TextView
                 style="@style/txt16BlackBold"
                 android:layout_marginTop="36dp"
                 android:text="@string/from_your_library" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listLibrary"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="16dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listLibrary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never" />
+
+                <ProgressBar
+                    android:id="@+id/progressLibrary"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/blue" />
+
+            </FrameLayout>
 
             <TextView
                 style="@style/txt16BlackBold"
                 android:layout_marginTop="36dp"
                 android:text="@string/trending_songs_for_you" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listTrending"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="16dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listTrending"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"/>
+
+                <ProgressBar
+                    android:id="@+id/progressTrending"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/blue" />
+
+            </FrameLayout>
 
             <TextView
                 style="@style/txt16BlackBold"
                 android:layout_marginTop="36dp"
                 android:text="@string/artists_you_should_follow" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listFollow"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="16dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listFollow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never" />
+
+                <ProgressBar
+                    android:id="@+id/progressFollow"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/blue" />
+
+            </FrameLayout>
 
             <TextView
                 style="@style/txt16BlackBold"
                 android:layout_marginTop="36dp"
                 android:text="@string/music_genre" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listMusicGenre"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="16dp">
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listMusicGenre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never" />
+
+                <ProgressBar
+                    android:id="@+id/progressMusicGenre"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/blue" />
+
+            </FrameLayout>
         </LinearLayout>
     </ScrollView>
 

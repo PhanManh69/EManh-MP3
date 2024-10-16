@@ -14,10 +14,10 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.emanh.mp3.R
 import com.emanh.mp3.databinding.ViewholderListListenBinding
-import com.emanh.mp3.model.ListenAgainModel
+import com.emanh.mp3.model.SongModel
 
 class ListListenAdapter(
-    private val items: MutableList<ListenAgainModel>
+    private val items: MutableList<SongModel>
 ) : RecyclerView.Adapter<ListListenAdapter.ViewHolder>() {
 
     private var context: Context? = null
@@ -71,11 +71,11 @@ class ListListenAdapter(
             })
             .into(holder.binding.imgLogoSong)
         holder.binding.txtNameSong.text = item.name
-        holder.binding.txtSingerTimeSong.text = "${item.singer} • ${item.time}"
+        holder.binding.txtSingerTimeSong.text = "${item.singer}  •  ${item.time}"
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateList(newItems: List<ListenAgainModel>) {
+    fun updateList(newItems: List<SongModel>) {
         items.clear()
         items.addAll(newItems)
         notifyDataSetChanged()

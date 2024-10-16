@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import com.emanh.mp3.databinding.FragmentHomeBinding
 import com.emanh.mp3.helper.BaseFragment
 import com.emanh.mp3.view.MainActivity
+import com.emanh.mp3.viewModel.LibraryViewModel
 import com.emanh.mp3.viewModel.SongViewModel
 
 class HomeFragment : BaseFragment() {
@@ -19,6 +20,7 @@ class HomeFragment : BaseFragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private val songViewModel: SongViewModel by viewModels()
+    private val libraryViewModel: LibraryViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +31,7 @@ class HomeFragment : BaseFragment() {
         initClick()
         initListenAgain()
         initQuickPicks()
+        initLibrary()
 
         return binding.root
     }
@@ -76,6 +79,20 @@ class HomeFragment : BaseFragment() {
 
             binding.listQuickPicks.visibility = View.VISIBLE
             binding.progressQuickPicks.visibility = View.GONE
+        })
+    }
+
+    private fun initLibrary() {
+        val libraryAdapter = LibraryHomeAdapter(mutableListOf())
+        binding.listLibrary.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.listLibrary.adapter = libraryAdapter
+        binding.progressLibrary.visibility = View.VISIBLE
+
+        libraryViewModel.libraryHomeList.observe(viewLifecycleOwner, Observer {
+            libraryAdapter.updateList(it)
+
+            binding.listLibrary.visibility = View.VISIBLE
+            binding.progressLibrary.visibility = View.GONE
         })
     }
 }

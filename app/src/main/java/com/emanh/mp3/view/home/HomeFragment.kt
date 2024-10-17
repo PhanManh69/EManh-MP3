@@ -13,6 +13,7 @@ import com.emanh.mp3.databinding.FragmentHomeBinding
 import com.emanh.mp3.helper.BaseFragment
 import com.emanh.mp3.view.MainActivity
 import com.emanh.mp3.viewModel.ChannelViewModel
+import com.emanh.mp3.viewModel.GenreViewModel
 import com.emanh.mp3.viewModel.LibraryViewModel
 import com.emanh.mp3.viewModel.SongViewModel
 
@@ -23,6 +24,7 @@ class HomeFragment : BaseFragment() {
     private val songViewModel: SongViewModel by viewModels()
     private val libraryViewModel: LibraryViewModel by viewModels()
     private val channelViewModel: ChannelViewModel by viewModels()
+    private val genreViewModel: GenreViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +38,7 @@ class HomeFragment : BaseFragment() {
         initLibrary()
         initTrending()
         initFollow()
+        initMusicGenre()
 
         return binding.root
     }
@@ -79,7 +82,8 @@ class HomeFragment : BaseFragment() {
         pagerSnapHelper.attachToRecyclerView(binding.listQuickPicks)
 
         songViewModel.quickPicksList.observe(viewLifecycleOwner, Observer {
-            quickPicksAdapter.updateList(it)
+            val quickPicksList = it.take(24).toMutableList()
+            quickPicksAdapter.updateList(quickPicksList)
 
             binding.listQuickPicks.visibility = View.VISIBLE
             binding.progressQuickPicks.visibility = View.GONE
@@ -88,7 +92,8 @@ class HomeFragment : BaseFragment() {
 
     private fun initLibrary() {
         val libraryAdapter = LibraryHomeAdapter(mutableListOf())
-        binding.listLibrary.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.listLibrary.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.listLibrary.adapter = libraryAdapter
         binding.progressLibrary.visibility = View.VISIBLE
 
@@ -110,8 +115,10 @@ class HomeFragment : BaseFragment() {
         val pagerSnapHelper = PagerSnapHelper()
         pagerSnapHelper.attachToRecyclerView(binding.listTrending)
 
-        songViewModel.trendingList.observe(viewLifecycleOwner, Observer {
-            trendingAdapter.updateList(it)
+        songViewModel.trendingList.observe(viewLifecycleOwner, Observer { songList ->
+            val sortedList = songList.sortedByDescending { it.view }
+            val limitedList = sortedList.take(24).toMutableList()
+            trendingAdapter.updateList(limitedList)
 
             binding.listTrending.visibility = View.VISIBLE
             binding.progressTrending.visibility = View.GONE
@@ -130,6 +137,21 @@ class HomeFragment : BaseFragment() {
 
             binding.listFollow.visibility = View.VISIBLE
             binding.progressFollow.visibility = View.GONE
+        })
+    }
+
+    private fun initMusicGenre() {
+        val musicGenreAdapter = MusicGenreAdapter(mutableListOf())
+        binding.listMusicGenre.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.listMusicGenre.adapter = musicGenreAdapter
+        binding.progressMusicGenre.visibility = View.VISIBLE
+
+        genreViewModel.musicGenreList.observe(viewLifecycleOwner, Observer {
+            musicGenreAdapter.updateList(it)
+
+            binding.listMusicGenre.visibility = View.VISIBLE
+            binding.progressMusicGenre.visibility = View.GONE
         })
     }
 }

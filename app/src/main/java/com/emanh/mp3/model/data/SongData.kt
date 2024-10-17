@@ -173,6 +173,41 @@ class SongData {
                 "RPT MCK, feat. Lope Phạm",
                 "3:24",
                 24020000
+            ), SongModel(
+                25,
+                "https://lh3.googleusercontent.com/BdQhioJtjSuXRFgu1Tpog99s_79T3EgFiHHSvmzznMBTzi7-ezeQC9KntW8cAUyCudcnB8xQn1DSXw-s=w544-h544-l90-rj",
+                "Đã lỡ yêu em nhiều",
+                "Justatee",
+                "4:22",
+                131020000
+            ), SongModel(
+                26,
+                "https://lh3.googleusercontent.com/jlda5BlJrebhzFL6gjoB2fXhffY74xCcKFwcWChSJ_h8t41j3uR1qaXvaLqMv3MemIzbAngmcw-G9Ziq=w544-h544-l90-rj",
+                "Anh là ngoại lên của em",
+                "Phương Ly",
+                "3:09",
+                524020000
+            ), SongModel(
+                27,
+                "https://lh3.googleusercontent.com/Vwcdau3oJsJzIaLrfZxtqW754K7ll_sot2mg9eZpbAnAgxMguytVl7zahx9usHI5J-qyb6tHDSQ_JWI=w544-h544-l90-rj",
+                "Trên tình ban dưới tình yêu",
+                "MIN",
+                "3:20",
+                1024020000
+            ), SongModel(
+                28,
+                "https://lh3.googleusercontent.com/CryP327g2DzOw9rpj-7Kc60PuQSmgmStIUPxYFa3CgZSV1z_57_tb9iXZ1hM2yJbcgidIlgOtsD0aIU=w544-h544-l90-rj",
+                "Lowkey",
+                "NIKI",
+                "3:24",
+                24020000
+            ), SongModel(
+                29,
+                "https://lh3.googleusercontent.com/TaWMwkEJJNRf5kyh7gzDpBWQxZks9i8Dnj_xRGjGi4hcMTqyWzEPUQ60XkIDqppxZf42bCEXSbLE8lJ3lA=w544-h544-l90-rj",
+                "Mê cung tình yêu",
+                "52Hz, prod. RIO",
+                "3:40",
+                5020000
             )
         )
     }
